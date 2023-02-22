@@ -1,0 +1,132 @@
+
+# POST DATA TO ADD ADMIN 
+POST http://localhost:5000/public/admin/register
+Content-Type: application/json
+
+{
+    "email": "doe71001@gmail.com",
+    "mobile": "9876543210",
+    "password": "12345"
+}
+
+###
+
+# LOGIN ADMIN
+POST http://localhost:5000/public/admin/login
+Content-Type: application/json
+
+{
+    "email": "doe71001@gmail.com",
+    "password": "12345"
+}
+###
+
+# GET ADMIN
+
+GET http://localhost:5000/public/admin/get-profile/6395f3e92fb301eb92489dfc
+Content-Type: application/json
+###
+# ADD DOCTOR
+POST http://localhost:5000/public/admin/add-doctor
+Content-Type: application/json
+
+{
+    "name": "Dr. jane Doe",
+    "email": "snehashaw122@gmail.com",
+    "password": "12745",
+    "mobile": "9876543210",
+    "designation": "Regular",
+    "type": "permanent",
+    "dutyHoursPerDay": 8,
+    "domain": ["ECG","ECHO"]
+}
+###
+
+# DELETE DOCTOR
+POST http://localhost:5000/public/admin/delete-doctor
+Content-Type: application/json
+
+{
+    "email": "shubham@gmail.com"
+
+}
+###
+# Update doctor
+PUT http://localhost:5000/public/admin/update-doctor/63a9ad9ec4ccdb71c8b3ced9
+Content-Type: application/json
+
+{
+   "domain":["echo"]
+}
+###
+# REMOVE DOMAIN
+PUT http://localhost:5000/public/admin/remove-domain/63a95a79827a4f6c6af5823c
+Content-Type: application/json
+
+{
+    "domain": ["ECHO"]
+}
+###
+# ADD BREAK
+POST http://localhost:5000/public/admin/add-breaks
+Content-Type: application/json
+
+{
+    "breakName" : "Tea Break",
+    "startTime": "5:00 PM",
+    "endTime": "5:30 PM",
+    "breakDuration": "30 min",
+    "breakType": "Automatic",
+    "breakStatus": true
+}
+
+###
+# GET BREAK
+GET http://localhost:5000/public/admin/get-all-breaks
+Content-Type: application/json
+
+###
+# DELETE BREAK
+POST http://localhost:5000/public/admin/delete-break
+Content-Type: application/json
+
+{
+    "breakName": "Lunch Break"
+}
+
+###
+#UPDATE BREAK STATUS
+PUT http://localhost:5000/public/admin/update-break-status
+Content-Type: application/json
+
+{
+    "breakName": "Lunch Break",
+    "breakStatus": false
+}
+
+###
+#GET LEAVES
+GET http://localhost:5000/public/admin/get-all-leaves
+Content-Type: application/json
+
+###
+
+#GET SPECIAL REQUESTS
+GET http://localhost:5000/public/admin/get-all-special-requests
+Content-Type: application/json
+
+###
+
+# APPROVE DENY SPECIAL REQUESTS
+PUT http://localhost:5000/public/admin/approve-deny-special-request/63a849c17e3335ace9aec621
+Content-Type: application/json
+
+{
+    "requestStatus": "declined"
+}
+
+###
+
+#  SEARCH DOCTOR
+GET http://localhost:5000/public/admin/search-doctor?name=shaan	
+Content-Type: application/json

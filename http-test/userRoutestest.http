@@ -1,0 +1,55 @@
+# LOGIN USER
+POST http://localhost:5000/public/auth/login
+Content-Type: application/json
+
+{
+    "email": "doe71001@gmail.com",
+    "password": "12445"
+}
+
+###
+
+# GET USER
+GET http://localhost:5000/public/auth/get-all-users
+Content-Type: application/json
+###
+
+# Update profile
+PUT http://localhost:5000/public/auth/63a95a79827a4f6c6af5823c/update-profile
+Content-Type: application/json
+
+{
+    "nightDuty": false   
+}
+###
+# RESET PASSWORD
+
+POST http://localhost:5000/public/auth/reset-password/63b05d87afc00d82ddec2833
+Content-Type: application/json
+
+{
+    "password": "12445"
+}
+
+###
+
+# REQUEST SPECIAL
+POST http://localhost:5000/public/auth/6399a8b629ae28c5337d382d/special-request
+Content-Type: application/json
+
+{
+   "request": "He is given a break from 4 PM to 5 PM for Yoga during the month of November"
+}
+###
+# REQUEST LEAVE
+POST http://localhost:5000/public/auth/63a95a79827a4f6c6af5823c/request-leave
+Content-Type: application/json
+
+{
+   
+    "leaveType": "casual",
+    "leaveReason": "He is going to attend a conference",
+     "startDate": "5/12/22",
+    "endDate": "7/12/22"
+    
+}
